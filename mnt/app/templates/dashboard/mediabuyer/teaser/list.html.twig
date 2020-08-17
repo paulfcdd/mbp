@@ -1,0 +1,68 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% block bulk_actions_checkobx %}{% endblock %}
+
+{% set delete_path = path('mediabuyer_dashboard.teaser_bulk_delete') %}
+{% set set_active_path = path('mediabuyer_dashboard.teaser_bulk_set_active') %}
+{% set set_disable_path = path('mediabuyer_dashboard.teaser_bulk_set_disable') %}
+{% set change_subgroup_path = path('mediabuyer_dashboard.teaser_bulk_change_subgroup') %}
+
+{% block table_body %}
+
+    {{ render_teasers_counter_labels(app.user) | raw }}
+    
+    {{ render_teasers_group_action_selector(teaser_groups) | raw }}
+
+    {{ render_bulk_action_selector(delete_path, set_active_path, set_disable_path, change_subgroup_path) | raw }}
+
+    {{ render_user_currency_information(app.user) | raw }}
+
+    {{ show_teaser_statistic_gathering_date() | raw }}
+
+    {% for teaser in teasers %}
+        <tr role="row" class="odd" {% if teaser.isActive == 0 %}style="background-color: #a7a3a3;"{% endif %}>
+            {{ render_bulk_item_checkbox_without_rules(app.request.get('_route'), teaser) | raw }}
+            <td>{{ teaser.id }}</td>
+            <td>{{ get_image_preview(teaser) | raw }}</td>
+            <td>{{ teaser.text }}</td>
+            <td>{{ render_teasers_geo_list(teaser) | raw }}</td> 
+            <td>{{ teaser.statistic.teaserShow }}</td>
+            <td>{{ teaser.statistic.click }}</td>
+            <td>{{ teaser.statistic.conversion }}</td>
+            <td>{{ teaser.statistic.approveConversion }}</td>
+            <td>{{ teaser.statistic.approve }}</td>
+            <td>{{ teaser.statistic.ecpm }}</td>
+            <td>{{ teaser.statistic.epc }}</td>
+            <td>{{ teaser.statistic.ctr }}</td>
+            <td>{{ teaser.statistic.cr }}</td>
+            <td style="width: 20%; text-align: center">
+                {% block action_buttons %}
+                    <div class="btn-group">
+                        <a href="{{ path('mediabuyer_dashboard.teaser_edit', {
+                            'id': teaser.id
+                        }) }}" type="button" class="btn btn-info"
+                           data-toggle="tooltip" data-placement="top" title="Редактировать">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a href="{{ path('mediabuyer_dashboard.teaser_copy', {
+                            'sourceTeaser': teaser.id
+                        }) }}" type="button"
+                           class="btn btn-success"
+                           data-toggle="tooltip" data-placement="top" title="Копировать">
+                            <i class="fas fa-copy"></i>
+                        </a>
+                        <a href="#" type="button"
+                           data-delete-url="{{ path('mediabuyer_dashboard.teaser_delete', {'id': teaser.id}) }}"
+                           class="btn btn-danger btn-delete"
+                           data-toggle="tooltip" data-placement="top" title="Удалить">
+
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </div>
+                {% endblock %}
+            </td>
+        </tr>
+    {% endfor %}
+    <script src="{{ asset('assets/dashboard/js/common/render-teasers-group-select.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}
+

@@ -1,0 +1,11 @@
+<div class="news-bages-block" style="margin: 20px 0">
+    {% if parameters.total is defined and parameters.total > 0 %}
+        <span class="badge badge-primary">Всего: {{ parameters.total }}</span>
+    {% endif %}
+    {% if parameters.enabledNews is defined and parameters.enabledNews > 0 %}
+        <span class="badge badge-success">Активные: {{ parameters.enabledNews }}</span>
+    {% endif %}
+    {% if parameters.disabledNews is defined and parameters.disabledNews > 0 %}
+        <span class="badge badge-danger">Неактивные: {{ parameters.disabledNews }}</span>
+    {% endif %}
+</div>

@@ -1,0 +1,102 @@
+{% extends 'front/theme_3/base.html.twig' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('assets/theme_3/static/css/short.css') }}?v={{ get_env('CSS_VERSION') }}">
+     <link rel="stylesheet" href="{{ asset('assets/theme_3/static/css/burger-menu.css') }}?v={{ get_env('CSS_VERSION') }}">
+ {% endblock %}
+
+{% block body %}
+    <tr>
+        <td id="main">
+            <div id="topContent">
+                <div id="firstBlock">
+                    <div id="fullNewsBlock">
+                        <a href="{{ path('front.full_news', {
+                            'id': article.id
+                        }) }}" target="_blank" >
+                            <div id="fadedBlockBigTizer">
+                                <div id="fadedBlockBigTizerOverlay"></div>
+                                <img src="{{ news_cropped_image_link }}" alt="">
+                                <div id="fadedBlockBigTizerText">
+                                    <h2 class="fadedBlockBigTizerHeader">{{ article.title }}</h2>
+                                    <p class="fadedBlockBigTizerAnons">{{ article.shortDescription }}</p>
+                                </div>
+                                <a href="{{ path('front.full_news', {
+                                    'id': article.id
+                                }) }}" target="_blank" class="fadedBlockBigTizerBtn">Читать полностью</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="stickyBlock" class="container">
+                    <div id="tizersStickyBlock" class="floating">
+                        {% for teaser in teasers | filter((v, k) => v.id != article.id) | slice (0, 3) %}
+                            <a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'short'})}}" target="_blank" style="color: #353535;">
+                                <div id="tizersStickyBlockDiv" class="add-shows" data-id="31388">
+                                    <img src="{{ asset('assets/theme_3/static/images/default.jpg') }}">
+                                    <p class="tizersStickyBlockHeader">{{ get_city(teaser.text, city) | raw }}</p>
+                                    <p class="readMoreBtn">Подробнее</p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div id="middleContent" class="footer">
+                {% set someVal = 0 %}
+
+                {% for teaser in teasers | filter((v, k) => v.id != article.id) | slice (3) %}
+                    {% if someVal  < 2 %}
+                        <a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'short'})}}" target="_blank" style="color: #353535;">
+                            <div id="horizontalTizBlock" class="add-shows">
+                                <div id="horizontalTizBlockImg">
+                                    <img src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block) }}" alt="">
+                                </div>
+                                <p class="horizontalTizBlockHeader">{{ get_city(teaser.text, city) | raw }}</p>
+                                <p class="readMoreBtn">Подробнее</p>
+                            </div>
+                        </a>
+                        {% set someVal = someVal + 1 %}
+                    {% elseif someVal == 2%}
+                        <a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'short'})}}" target="_blank" style="color: #353535;">
+                            <div id="verticalTizBlock" class="add-shows">
+                                <div id="verticalTizBlockImg">
+                                    <img src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block) }}" alt="">
+                                </div>
+                                <p class="verticalTizBlockHeader">{{ get_city(teaser.text, city) | raw }}</p>
+                                <p class="readMoreBtn">Подробнее</p>
+                            </div>
+                        </a>
+                        {% set someVal = someVal + 1 %}
+                    {% else %}
+                        <a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'short'})}}" target="_blank" style="color: #353535;">
+                            <div id="verticalTizBlock" class="add-shows">
+                                <div id="verticalTizBlockImg">
+                                    <img src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block) }}" alt="">
+                                </div>
+                                <p class="verticalTizBlockHeader">{{ get_city(teaser.text, city) | raw }}</p>
+                                <p class="readMoreBtn">Подробнее</p>
+                            </div>
+                        </a>
+                        {% set someVal = someVal - 3 %}
+                    {% endif%}
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="{{ asset('assets/node_modules/jquery/dist/jquery.min.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+
+    <script src="{{ asset('assets/theme_3/static/js/burger-menu.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+
+    <script src="{{ asset('assets/front/js/common/backfix.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/front/js/common/click-under.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/front/js/common/visit-request.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}

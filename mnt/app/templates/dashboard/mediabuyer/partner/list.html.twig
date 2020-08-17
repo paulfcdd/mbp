@@ -1,0 +1,33 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% block bulk_actions_checkobx %}{% endblock %}
+
+{% block table_body %}
+    {% for partner in partners %}
+        <tr role="row" class="odd">
+            <td>{{ partner.id }}</td>
+            <td>{{ partner.title }}</td>
+            <td>{{ partner.postback }}</td>
+            <td style="width: 20%; text-align: center">
+                {% block action_buttons %}
+                    <div class="btn-group">
+                        {% if partner.user.id == app.user.id %}
+                            <a href="{{ path('mediabuyer_dashboard.partner_edit', {
+                                'id': partner.id
+                            }) }}"  type="button" class="btn btn-info">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a href="#" type="button"
+                               data-delete-url="{{ path('mediabuyer_dashboard.partner_delete', {
+                                   'id': partner.id
+                               }) }}"
+                               class="btn btn-danger btn-delete">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}

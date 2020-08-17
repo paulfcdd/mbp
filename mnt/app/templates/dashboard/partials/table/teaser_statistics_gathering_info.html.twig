@@ -1,0 +1,9 @@
+{% if lastStatisticGatheringDate is not null %}
+    <div class="alert alert-info">
+        <p>Данные обновлены {{ lastStatisticGatheringDate.createdAt | date('d.m.Y') }} в {{ lastStatisticGatheringDate.createdAt | date('H:i') }} MSK. Обновляются раз в час.</p>
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+        <p>Данные еще не обновлялись</p>
+    </div>
+{% endif %}

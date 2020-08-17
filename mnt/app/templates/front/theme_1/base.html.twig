@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block stylesheets %}{% endblock %}
+    {{ get_counters()['head'] | raw }}
+    {{ render_send_pulse_script() | raw }}
+</head>
+<body>
+{% block header %}
+    <header class="header">
+        <div class="some-wrapper">
+            {{ render_nav_bar() | raw }}
+        </div>
+    </header>
+{% endblock %}
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="{{ asset('assets/node_modules/jquery/dist/jquery.min.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/node_modules/jquery.cookie/jquery.cookie.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <!-- script -->
+    <script src="{{ asset('assets/theme_1/static/js/script.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+
+    {% set activePartOfUrl = app.request.getBaseUrl ~ app.request.getPathInfo %}
+
+    {% if activePartOfUrl == '/teasers' %}
+        <script src="{{ asset('assets/front/js/common/teasers_script.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    {% elseif activePartOfUrl == '/' %}
+        <script src="{{ asset('assets/front/js/common/top_news_script.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    {% elseif activePartOfUrl | slice( 0, 12 ) == '/news/short/' or activePartOfUrl | slice( 0, 11 ) == '/news/full/' %}
+        <script src="{{ asset('assets/front/js/common/both_for_full_and_short_news_script.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    {% elseif activePartOfUrl | slice( 0, 12 ) == '/categories/' %}
+        <script src="{{ asset('assets/front/js/common/category_news_script.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    {% endif %}
+
+    <script src="{{ asset('assets/front/js/common/backfix.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/front/js/common/click-under.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/front/js/common/visit-request.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}
+{{ get_counters()['body'] | raw }}
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+{% block bulk_actions_checkobx %}{% endblock %}
+
+{% block table_body %}
+    <div class="bulk-actions-block" style="margin: 20px 0;">
+        {% set reportSettings %}
+            {{ form_start(reportSettingForm) }}
+            <p>
+                С <input name="report_settings[from]" type="text" id="from" value="{{ from }}" form="report_settings"> По <input
+                        name="report_settings[to]" type="text" id="to" value="{{ to }}" form="report_settings">
+                <select id="reload" class="custom-select" style="width: 300px" name="report_settings[period]" form="report_settings">
+                    <option value="" disabled selected>Быстрый выбор</option>
+                    {% for v, name in periods %}
+                        <option data-period="{{v}}" value={{ v }}>{{ name }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </p>
+            <h1>Настройки отчета</h1>
+            {{ form_row(reportSettingForm.sources) }}
+            {{ form_row(reportSettingForm.news) }}
+            <div class="row" style="margin-left: 0;">
+                {{ form_row(reportSettingForm.level1) }}
+                {{ form_row(reportSettingForm.level2) }}
+                {{ form_row(reportSettingForm.level3) }}
+            </div>
+            {{ form_end(reportSettingForm) }}
+        {% endset %}
+        {{ reportSettings|replace({'[icon]': '<i class="fas fa-sync-alt"></i>'})|raw }}
+
+        <div class="settings-of-fields-title-block"><i class="settings-of-fields-angle fas fa-angle-up"></i>
+            <h1>Настройки полей</h1></div>
+        <div class="slide-essential-fields-of-settings" style="display: none">
+            <div id="settings-fields-form">
+                {% set fieldsSettings %}
+                    {{ form_start(fieldsSettingsForm) }}
+                    {{ form_end(fieldsSettingsForm) }}
+                {% endset %}
+                {{ fieldsSettings|replace({'[icon]': '<i class="fas fa-check-square"></i>'})|raw }}
+            </div>
+        </div>
+
+        <div class="toggle-other-settings-form"><i class="fas fa-angle-up"></i>
+            Скрыть доп. настройки
+        </div>
+        <div class="slide">
+            {% set otherSettings %}
+                {{ form_start(otherSettingsForm) }}
+                <div class="row" style="margin-left: 0;">
+                    {{ form_row(otherSettingsForm.otherFilterParams1) }}
+                    <div class="wrapper-settings-form-value-1">
+                        {{ form_row(otherSettingsForm.otherFilterValues1) }}
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 0;">
+                    {{ form_row(otherSettingsForm.otherFilterParams2) }}
+                    <div class="wrapper-settings-form-value-2">
+                        {{ form_row(otherSettingsForm.otherFilterValues2) }}
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 0;">
+                    {{ form_row(otherSettingsForm.otherFilterParams3) }}
+                    <div class="wrapper-settings-form-value-3">
+                        {{ form_row(otherSettingsForm.otherFilterValues3) }}
+                    </div>
+                </div>
+                {{ form_end(otherSettingsForm) }}
+            {% endset %}
+            {{ otherSettings|replace({'[icon]': '<i class="fas fa-sync-alt"></i>'})|raw }}
+        </div>
+        {% for traffic_analysis_element in traffic_analysis %}
+            <tr role="row" class="odd">
+                {% for key, column in columns %}
+                    <td>{{ traffic_analysis_element[key] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </div>
+    <script src="{{ asset('assets/dashboard/js/common/datepicker-from-to.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/report-settings-form.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/other-settings-form.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/settings-fields-form.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/filter-by-date.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}

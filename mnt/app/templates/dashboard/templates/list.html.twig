@@ -1,0 +1,74 @@
+{% extends 'dashboard/base.html.twig' %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{{ asset('assets/node_modules/datatables/media/css/jquery.dataTables.min.css') }}?v={{ get_env('CSS_VERSION') }}">
+    <link rel="stylesheet" href="{{ asset('assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}?v={{ get_env('CSS_VERSION') }}">
+    <link rel="stylesheet" href="{{ asset('assets/node_modules/jquery-ui-dist/jquery-ui.css') }}?v={{ get_env('CSS_VERSION') }}">
+{% endblock %}
+
+{% block main_content %}
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-12">
+                <!-- /.card -->
+                <div class="card">
+                    {% block card %}
+                        <div class="card-header">
+                            {% block card_header %}
+                                {% block new_button %}
+                                    {% if new_button_action_link is defined %}
+                                    <a href="{{ new_button_action_link }}" type="button" class="btn btn-info"><i class="fas fa-plus"></i>&nbsp;{{ new_button_label }}</a>
+                                    {% endif %}
+                                {% endblock %}
+                            {% endblock %}
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            {% block card_body %}
+                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="data-table"
+                                                   class="table table-bordered table-striped dataTable dtr-inline"
+                                                   role="grid" aria-describedby="example1_info">
+                                                <thead>
+                                                <tr role="row">
+
+                                                    {{ render_bulk_checkbox(app.request.get('_route')) | raw }}
+
+                                                    {% block table_header %}
+                                                        {% include 'dashboard/partials/table/header.html.twig' with {'columns': columns} %}
+                                                    {% endblock %}
+
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tbody">
+                                                {% block table_body %}{% endblock %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% block other_data %}
+                                {% if save_button_action_link is defined %}
+                                    <a href="#" type="button" class="btn btn-info" id="save-button" data-url="{{ save_button_action_link }}"><i class="fas fa-save"></i>{{ save_button_label }}</a>
+                                {% endif %}
+                            {% endblock %}
+                            {% endblock %}
+                        </div>
+                        <!-- /.card-body -->
+                    {% endblock %}
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('assets/node_modules/datatables/media/js/jquery.dataTables.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/delete-ajax.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/data-table-setup.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/filter-news.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/news-sources-list-modal.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/costs-mass-edit.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/bulk-actions.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}

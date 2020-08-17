@@ -1,0 +1,56 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% block bulk_actions_checkobx %}{% endblock %}
+
+{% block table_body %}
+
+    {% for domain in domains %}
+        <tr role="row" class="odd">
+            <td>{{ domain.id }}</td>
+            <td>{{ domain.domain }}</td>
+            <td style="text-align: center">{% if domain.isMain %}<i class="fa fa-check"
+                                                                    aria-hidden="true"></i>{% endif %}</td>
+            <td>{{ domain.sendPulseId }}</td>
+            <td>{{ domain.certEndDate is empty ? "" : domain.certEndDate|date('d.m.Y ') }}</td>
+            <td style="width: 20%; text-align: center">
+                {% block action_buttons %}
+                    <div class="btn-group">
+                        <a href="{{ path('mediabuyer_dashboard.domain_edit', {
+                            'id': domain.id
+                        }) }}" type="button" class="btn btn-info" title="Редактировать">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a href="#" type="button"
+                           data-delete-url="{{ path('mediabuyer_dashboard.domain_parking_delete', {'id': domain.id}) }}"
+                           class="btn btn-danger btn-delete"
+                           data-toggle="tooltip" data-placement="top" title="Удалить"
+                        >
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+
+                        {% if domain.isMain %}
+                            <a href="{{ path('mediabuyer_dashboard.domain_active_main', {'id': domain.id})  }}" type="button"
+                               class="btn btn-warning"
+                               data-toggle="tooltip" data-placement="top" title="Сделать неосновным"
+                            >
+                                <i class="fas fa-ban"></i>
+                            </a>
+                        {% else %}
+                            <a href="{{ path('mediabuyer_dashboard.domain_active_main', {'id': domain.id})  }}" type="button"
+                               class="btn btn-success"
+                               data-toggle="tooltip" data-placement="top" title="Сделать основным"
+                            >
+                                <i class="fas fa-check-square"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+{% block other_data %}
+    <p>В настройках DNS укажите:</p>
+    <p>Для CNAME-записи - {{ host }}</p>
+    <p>Для А-записи - {{ip }}</p>
+{% endblock %}

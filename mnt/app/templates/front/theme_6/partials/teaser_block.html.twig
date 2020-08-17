@@ -1,0 +1,24 @@
+<div class="item -size-m -theme-white">
+    <a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'full'})}}" style="text-decoration: none; color: black;" target="_blank">
+        <div class="item-container">
+            <div class="item-cover">
+                <div class="item-cover-thumb" style="background: rgb(137, 128, 120);">
+                    <img src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block) }}"
+                         class="item-cover-img">
+                    <div class="item-cover-mask"
+                         style="background: linear-gradient(rgba(137, 128, 120, 0) 0%, rgb(137, 128, 120) 100%);"></div>
+                </div>
+            </div>
+            <div class="item-content" style="width: 100%">
+                <div class="item-category">
+
+                </div>
+                <div class="item-title" style="color: rgb(249, 249, 249);">
+                    <div class="item-link">
+                        <span class="item-link-text" style="font-size: 1.2rem;">{{ get_city(teaser.text, city) | raw }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

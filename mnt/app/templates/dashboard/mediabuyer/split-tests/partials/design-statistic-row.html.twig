@@ -1,0 +1,14 @@
+{% if statistic is not null %}
+    <tr role="row" class="odd">
+        <td>{{ render_active_checkbox(design, app.user) | raw }}</td>
+        <td>{{ get_design_screen(design.name) | raw }}</td>
+        <td>{{ design.name }}</td>
+        <td>{{ statistic.CTR }}</td>
+        <td>{{ statistic.conversion }}</td>
+        <td>{{ statistic.approveConversion }}</td>
+        <td>{{ convert_to_user_currency(statistic.EPC, app.user) }}</td>
+        <td>{{ statistic.CR }}</td>
+        <td>{{ statistic.ROI }}</td>
+        <td></td>
+    </tr>
+{% endif %}

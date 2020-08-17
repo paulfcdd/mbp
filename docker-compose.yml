@@ -1,0 +1,59 @@
+version: '3'
+services:
+  ##################################################
+  app:
+    build:
+      context: ./mnt/docker/
+      dockerfile: Dockerfile
+    links:
+      - db
+      - adminer
+      - redis
+    volumes:
+      - ./mnt/app/:/var/www/html
+    environment:
+      XDEBUG_CONFIG: "remote_host=172.0.0.10 remote_port=9000 remote_enable=1"
+    networks:
+      default:
+        ipv4_address: 172.0.0.3
+  ##################################################
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database_volume:/var/lib/mysql
+      - ./project_databases:/docker-entrypoint-initdb.d
+      - ./mnt/docker/dev:/var/dev
+    command: --sql_mode=""
+  ##################################################
+  adminer:
+    image: adminer:latest
+    networks:
+      default:
+        ipv4_address: 172.0.0.4
+  #################################################
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+    - ./mnt/docker/dev/redis-data:/data
+    networks:
+      default:
+        ipv4_address: 172.0.0.5
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.0.0.0/24
+
+volumes:
+  database_volume:
+  wordpress:
+  react:

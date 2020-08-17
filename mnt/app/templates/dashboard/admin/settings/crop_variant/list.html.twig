@@ -1,0 +1,16 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% block table_body %}
+    {{ form_start(form) }}
+    {% for item in form.crop_variants %}
+        <tr role="row" class="odd">
+            <td>{{ form_widget(item.design_number) }}</td>
+            <td>{{ form_widget(item.width_teaser_block) }}</td>
+            <td>{{ form_widget(item.height_teaser_block) }}</td>
+            <td>{{ form_widget(item.width_news_block) }}</td>
+            <td>{{ form_widget(item.height_news_block) }}</td>
+        </tr>
+    {% endfor %}
+    {{ form_widget(form.save) }}
+    {{ form_end(form) }}
+{% endblock %}

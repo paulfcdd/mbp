@@ -1,0 +1,15 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% block bulk_actions_checkobx %}{% endblock %}
+{% block table_body %}
+    {% if(cron_date is null) %}
+        <p>Данные еще не обновлялись</p>
+    {% else %}
+        <p>Данные обновлены {{ cron_date }} MSK. Обновляются раз в час.</p>
+    {% endif %}
+    {{ render_user_currency_information(app.user) | raw }}
+    {% for design in designs %}
+        {{ get_design_statistic(design, app.user) | raw() }}
+    {% endfor %}
+    <script src="{{ asset('assets/dashboard/js/common/buyer-activate-entity.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}

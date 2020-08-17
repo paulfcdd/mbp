@@ -1,0 +1,64 @@
+{% extends 'dashboard/templates/list.html.twig' %}
+
+{% set delete_path = path('admin_dashboard.news_bulk_delete') %}
+{% set set_active_path = path('admin_dashboard.news_bulk_set_active') %}
+{% set set_disable_path = path('admin_dashboard.news_bulk_set_disable') %}
+
+{% block table_body %}
+
+    {{ render_counter_labels(app.user) | raw }}
+
+    {{ render_bulk_action_selector(delete_path, set_active_path, set_disable_path) | raw }}
+
+    <div class="bulk-actions-block" style="margin: 20px 0;">
+        <div class="input-group col-md-3">
+            <select multiple class="custom-select" id="filter-news">
+                {% for category in categories %}
+                    <option value={{ category.id }}>{{ category.title }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group col-md-3">
+            <button class="btn btn-info" id="clear-filter-news" style="margin-top: .75rem;">Сбросить</button>
+        </div>
+    </div>
+    <div>
+        {% if(cron_date is null) %}
+            <p>Данные еще не обновлялись</p>
+        {% else %}
+            <p>Данные обновлены {{ cron_date }} MSK.</p>
+        {% endif %}
+    </div>
+
+    <tr role="row" class="odd">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="width: 20%; text-align: center">
+            {% block action_buttons %}
+                <div class="btn-group">
+                </div>
+            {% endblock %}
+        </td>
+    </tr>
+    {% endblock %}

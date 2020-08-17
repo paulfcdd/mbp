@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>All news</title>
+        <link href="static/css/styles.css" rel="stylesheet">
+        <link href="static/css/template.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <input type="hidden" id="newsId" value="0">
+        <input type="hidden" id="sourceId" value="8">
+        <input type="hidden" id="fromSite" value="0">
+        <input type="hidden" id="pushSubscription" value="1">
+        <input type="hidden" id="showInfoxItems" value="0">
+        <input type="hidden" id="countryIso" value="RU">
+
+        <!--header-->
+        <header class="header decorated-bottom">
+            <div class="center-wrapper">
+                <div class="header__inner">
+                    <div class="header__columns">
+                        <div class="header__column hidden" id="header-menu">
+                            <nav class="menu">
+                                <ul class="menu__list">
+                                    <li class="menu__item active">
+                                        <a class="menu__link" href="news_by_group.html" target="_blank">Политика</a></li>
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="news_by_group.html" target="_blank">Шоу-бизнес</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="header__column">
+                            <a href="" class="logotype">
+                                вестник
+                            </a>
+                        </div>
+
+                        <div class="header__column hidden" id="header-menu">
+                            <nav class="menu">
+                                <ul class="menu__list">
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="news_by_group.html" target="_blank">Здоровье</a></li>
+                                    <li class="menu__item">
+                                        <a class="menu__link" href="news_by_group.html" target="_blank">Жизнь</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!--\header-->
+
+        <input type="hidden" id="idCategory" value="1">
+
+        <section id="main">
+            <section class="tail-fragment tail-fragment_white decorated-bottom top-page-section">
+                <div class="center-wrapper">
+                    <div class="section-headline">ПОЛИТИКА</div>
+                    <div class="fints-line fints-line_of-3">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c99c98eb6192_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Дороги расходятся: Кадыров о новом пути без
+                                    России</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">26 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c86003c90a20_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Что ждет неработающих пенсионеров: Путин решил
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">11 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c948035c961c_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Все видели отца Путина? Упадете, узнав, кто
+                                    эта личность!</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">22 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints-line fints-line_of-4">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e71aff195ece_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Все произойдет 22 апреля: Путин уже готовится
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">18 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered  hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c19f05490ce6_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Заявление Горбачева о Путине! Кремль в ярости!
+                                    Маски сорваны...</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">19 декабря</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c516efd83ae2_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Вот с кем сейчас живет Людмила Путина! Никогда
+                                    не поверите </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">30 января</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c80ce18886ce_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Решена судьба тех, кому за 70 лет: Путин
+                                    подписал бумагу</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">7 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tail-fragment tail-fragment_white">
+                <div class="center-wrapper">
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e7da25f67902_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Владимир Путин о жизни в СССР: хватило одной
+                                    фразы</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet fint_bordered">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5db9563100d95_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Взрыв гранаты: озвучена причина гибели
+                                    Зеленского</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5dd62f1c1e7b9_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Больше не секрет: вот с кем живет Татьяна
+                                    Голикова</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet fint_bordered">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5bc092e2c649d_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Раскрылось прозвище Путина в юности: люди ушам
+                                    не поверили </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e73108ea80fd_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Путин сообщил неожиданную новость для всех
+                                    пенсионеров</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet fint_bordered">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5d6e1e98db9ae_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Старушка предсказала судьбу Зеленского: вот чем
+                                    закончится правление</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tail-fragment">
+                <div class="center-wrapper">
+                    <div class="section-headline">Читайте также</div>
+                    <div class="fints-line fints-line_of-3">
+                        <a href="short.html" class="fint fint_vertical hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5dbbe7cb1d927_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Сильнейший астролог не стал молчать! Вот что
+                                    будет с Россией...</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">1 ноября</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c6b97bc473ee_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Крым отдал Украине не Хрущев: правда всплыла
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">19 февраля</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5d8dc0bb37790_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Еще 3 сюрприза: Голикова о том, что ждет
+                                    пожилых людей</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">27 сентября</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5bb4d3d15cac9_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Спустя годы вскрылась тайна развода Путина с
+                                    женой</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e9453bc2ffcf_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Голикова: 30 апреля неслучайная дата для конца
+                                    карантина</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e5f3c8172bbb_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Россияне потеряли Михаила Горбачева: тихо ушел?
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e9e90447e27c_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Ахнете, узнав первую зарплату Зеленского на
+                                    посту президента</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e82d7d60719d_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Мишустин сделал важное заявление касательно
+                                    пожилых россиян</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5dad772b6fdfe_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Закон приняли по-тихому: радостная весть для
+                                    пенсионеров</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="tail-fragment tail-fragment_white decorated-bottom">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-4">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e81aff34178b_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Родившимся до 1966 года, выдадут крупное
+                                    пособие</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">30 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e6b535a739c5_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Трампа позвали на 9 Мая в Москву. Его ответ
+                                    убил всех</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">13 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5cec049fe8701_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Кадыров высказался о Зеленском и Крыме! Мир
+                                    вздрогнул от его слов</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">27 мая</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e45106f0acce_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Самолеты РФ будут сбиваться без предупреждения
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">13 февраля</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="append">
+            <section class="tail-fragment">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-3">
+                        <a href="short.html" class="fint fint_vertical hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5d1349114709c_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Кто убил Захарченко: об этом и подумать не
+                                    могли</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">26 июня</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e8421983502e_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Лукашенко сделал заявление, от которого
+                                    вздрогнула вся Беларусь </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">1 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5bb4d3d15cac9_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Всплыла тайна развода Путина! Лучше присядьте
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">3 октября</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e73064fc7319_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Известна причина отказа Лукашенко признавать
+                                    Крым российским</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e81aff34178b_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Старикам, рожденным до 1966 года, положены
+                                    огромные выплаты</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e2555e11083f_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Медведев сделал неожиданное заявление: этого
+                                    боялись все</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5caadf2616f45_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Спустя 30 лет всплыло пугающее прошлое жены
+                                    Порошенко</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e956739a2410_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Зеленский сказал правду о пожаре в Чернобыльской
+                                    зоне</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5c59525c3d2ec_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Путину пожелали выйти на пенсию: ответил
+                                    незамедлительно </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="tail-fragment tail-fragment_white decorated-bottom">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-4">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5c45668549aaf_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Ющенко сказал о России то, что все боялись
+                                    озвучивать</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">21 января</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e69ee4b55606_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Мишустин меняет порядок выплат пенсий! Такого
+                                    поворота никто не ожидал</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">12 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e856f9ba0f01_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Очаг возражения: чем обернется отказ Лукашенко
+                                    от карантина</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">2 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e7aed6b8ff04_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Что осталось за кадром поездки Путина в
+                                    Коммунарку</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">25 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="tail-fragment">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-3">
+                        <a href="short.html" class="fint fint_vertical hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5dcd1c02c9121_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Вы видели жену Лаврова? Лучше присядьте</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">14 ноября</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e73108ea80fd_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Выход на пенсию в 55 и 60 лет: новый указ
+                                    Путина</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">19 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e995db86537a_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Россиянам дали совет относительно сбережений
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">17 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e8eaf6af1365_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Новый указ Путина: люди не ожидали таких перемен
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e96952626c1a_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Что Лукашенко посулил Путину за приезд в Минск
+                                    19 мая: хохотали все</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5d8c56516e73e_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">В России грядет крупнейшее после 90-х «изъятие»
+                                    денег: нюансы</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e9453bc2ffcf_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Голикова о том, что произойдет в РФ 30 апреля
+                                    2020 года</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e981ad882da1_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Президент США называет виновников эпидемии</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5c948035c961c_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Все видели отца Путина? Упадете, узнав, кто эта
+                                    личность</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="tail-fragment tail-fragment_white decorated-bottom">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-4">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5dad772b6fdfe_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Индексация: Голикова озвучила категорию
+                                    счастливчиков</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">21 октября</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e785791ba8b1_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Новый указ Путина: люди не ожидали таких
+                                    перемен</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">23 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e8eaf4cbe63b_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Все начнется уже скоро: Путин принял волевое
+                                    решение</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">9 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e2555e11083f_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Не пришлось долго ждать: всплыла причина
+                                    отставки правительства </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">20 января</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="row_append" class="template">
+            <section class="tail-fragment">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-3">
+                        <a href="short.html" class="fint fint_vertical hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5dcd1c02c9121_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Вы видели жену Лаврова? Лучше присядьте</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">14 ноября</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e73108ea80fd_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Выход на пенсию в 55 и 60 лет: новый указ
+                                    Путина</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">19 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e995db86537a_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Россиянам дали совет относительно сбережений
+                                </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">17 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e8eaf6af1365_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Новый указ Путина: люди не ожидали таких перемен
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e96952626c1a_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Что Лукашенко посулил Путину за приезд в Минск
+                                    19 мая: хохотали все</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5d8c56516e73e_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">В России грядет крупнейшее после 90-х «изъятие»
+                                    денег: нюансы</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e9453bc2ffcf_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Голикова о том, что произойдет в РФ 30 апреля
+                                    2020 года</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="fints fints_billet">
+                        <a href="short.html" class="fint fint_billet hide-on-1000">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5e981ad882da1_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Президент США называет виновников эпидемии</div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_billet">
+                            <div class="fint__image fint__image_billet">
+                                <img src="static/images/5c948035c961c_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_billet">
+                                <div class="fint__title fint__title_billet">Все видели отца Путина? Упадете, узнав, кто эта
+                                    личность</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="tail-fragment tail-fragment_white decorated-bottom">
+                <div class="center-wrapper">
+                    <div class="fints-line fints-line_of-4">
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-1000">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5dad772b6fdfe_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Индексация: Голикова озвучила категорию
+                                    счастливчиков</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">21 октября</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered hide-on-560">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e785791ba8b1_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Новый указ Путина: люди не ожидали таких
+                                    перемен</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">23 марта</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e8eaf4cbe63b_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Все начнется уже скоро: Путин принял волевое
+                                    решение</div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">9 апреля</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="short.html" class="fint fint_vertical fint_bordered">
+                            <div class="fint__image fint__image_vertical">
+                                <img src="static/images/5e2555e11083f_4x3.jpg">
+                            </div>
+                            <div class="fint__content fint__content_vertical">
+                                <div class="fint__title fint__title_vertical">Не пришлось долго ждать: всплыла причина
+                                    отставки правительства </div>
+                                <div class="fint__post-time fint__post-time_vertical">
+                                    <i class="fa fa-calendar-o"></i>
+                                    <span class="s_date">20 января</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--footer-->
+        <footer class="footer">
+            <div class="center-wrapper">
+                <div class="footer__inner">
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <div class="info-links">
+                                <span class="about">О проекте</span>
+                                <span class="contacts">Контакты</span>
+                            </div>
+                            <div class="copyright">
+                                Copyright © 2020 «Вестник.online»<br>
+                                Все права защищены. <br class="hide show-on-1000">
+                                Для детей старше 16 лет
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <div class="socials socials_footer">
+                                <a href="https://twitter.com/share?url=https://news-fancy.com/category/politika"
+                                    class="social-net social-net_twitter"></a>
+                                <a href="https://www.facebook.com/share.php?u=https://news-fancy.com/category/politika"
+                                    class="social-net social-net_facebook"></a>
+                                <a href="https://vk.com/share.php?url=https://news-fancy.com/category/politika"
+                                    class="social-net social-net_vkontakte"></a>
+                                <a href="https://telegram.me/share/url?url=https://news-fancy.com/category/politika"
+                                    class="social-net social-net_telegram"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--\footer-->
+
+        <div id="modal-background">
+            <div id="about" class="modal-window" style="display: none;">
+                <div class="modal-headline">
+                    О проекте
+                    <div class="modal-close">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <span class="site-name">«News-Fancy»</span> — информационный ресурс для русскоязычного
+                    населения стран СНГ. Мы предлагаем обзор главных мировых событий дня
+                    в области политики, экономики, общественной жизни, а также
+                    популярных интернет-трендов.
+                    <span class="site-name">«News-Fancy»</span>
+                    является частным независимым изданием, не отражает позицию какой-либо
+                    из политических сил и следует критериям информационной объективности.
+                </div>
+            </div>
+            <div id="contacts" class="modal-window" style="display: none;">
+                <div class="modal-headline">
+                    Напишите нам
+                    <div class="modal-close">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="modal-content">
+                    <form id="question" action="#" method="post" novalidate="novalidate">
+                        <div class="form-group clearfix">
+                            <label for="c-name">Имя</label>
+                            <input id="c-name" class="form-element" type="text" name="name" required="">
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="c-email">E-mail</label>
+                            <input id="c-email" class="form-element" type="email" name="email" required="">
+                        </div>
+                        <div class="form-group clearfix">
+                            <label for="c-theme">Тема сообщения</label>
+                            <input id="c-theme" class="form-element" type="text" name="subject" required="">
+                        </div>
+                        <textarea name="message" id="message" required=""></textarea>
+                        <input class="form-element submit" type="submit" value="Отправить">
+                    </form>
+                    <div class="success" style="display: none;">
+                        <div class="message">Сообщение отправлено!</div>
+                    </div>
+                    <div class="progress-bar" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

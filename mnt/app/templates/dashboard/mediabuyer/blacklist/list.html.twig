@@ -1,0 +1,11 @@
+{% extends 'dashboard/base.html.twig' %}
+  {% block main_content %}
+    {% set formHtml %}
+    {{ form_start(blackWhiteListForm) }}
+    {{ form_end(blackWhiteListForm) }}
+    {% endset %}
+    {{ formHtml|replace({'[icon]': '<i class="fas fa-sync-alt"></i>'})|raw }}
+    <p><textarea id="list" rows="10" cols="45" name="text" readonly></textarea></p>
+    <script src="{{ asset('assets/dashboard/js/common/multiple-selector-select-all-button.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+    <script src="{{ asset('assets/dashboard/js/common/black-n-white-lists.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+  {% endblock %}

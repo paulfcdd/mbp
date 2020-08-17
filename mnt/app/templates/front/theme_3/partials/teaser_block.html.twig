@@ -1,0 +1,7 @@
+<a href="{{ teasers_click_counter_link(teaser, article, {'pageType': 'full'})}}" target="_blank" style="color: #353535; display: flex; flex-direction: row">
+    <div id="tizersStickyBlockDiv" class="add-shows">
+        <img style="width: 65%" src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block) }}">
+        <p class="tizersStickyBlockHeader">{{ get_city(teaser.text, city) | raw }}</p>
+        <p class="readMoreBtn">Подробнее</p>
+    </div>
+</a>

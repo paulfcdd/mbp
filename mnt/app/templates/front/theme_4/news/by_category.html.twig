@@ -1,0 +1,39 @@
+{% extends 'front/theme_4/base.html.twig' %}
+
+{% block title %}
+    {{ newsCategory }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div id="grid" class="news row">
+
+            {% for item in news %}
+
+                <div class="grid-item item item-news col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <a class="teaser teaser-news" href="{{ path('front.short_news', {
+                        'id': item.id
+                    }) }}" target="_blank" style="background: rgb(190, 148, 192);">
+                        <div class="teaser-image">
+                            <div class="background" style="background: linear-gradient(0deg, rgb(190, 148, 192) 0px, transparent 100%);"></div>
+                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                        </div>
+                        <div class="teaser-title" style="color: #212121;">
+                            {{ item.title }}
+                        </div>
+                        <div class="category" style="color: #212121; background: rgb(190, 148, 192);">
+                            Тип новости
+                        </div>
+                        <div class="button" style="display: none;">
+                            <div class="read-more">
+                                Подробнее
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

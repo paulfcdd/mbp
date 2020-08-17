@@ -1,0 +1,4 @@
+{% extends 'dashboard/templates/form.html.twig' %}
+{% block custom_script %}
+        <script src="{{ asset('assets/dashboard/js/common/dynamic-generation-conversion-form.js') }}?v={{ get_env('JS_VERSION') }}"></script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'front/theme_4/base.html.twig' %}
+
+{% block title %}
+    Все тизеры
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div id="grid" class="teasers row">
+
+            {% for teaser in teasers %}
+
+                <div class="grid-item item item-product col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <a class="teaser teaser-product" href="#" target="_blank" style="background: rgb(198, 140, 144);">
+                        <div class="teaser-image">
+                            <div class="background" style="background: linear-gradient(0deg, rgb(198, 140, 144) 0px, transparent 100%);"></div>
+                            <img class="img-fluid" src="{{ generate_preview_link(teaser.fileName, 'teaser',  width_teaser_block, height_teaser_block ) }}" alt="">
+                            <div class="category" style="color: #212121; background: rgb(198, 140, 144);">
+                                Лучшее
+                            </div>
+                        </div>
+                        <div class="teaser-title" style="color: #212121;">
+                            {{ teaser.text }}
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

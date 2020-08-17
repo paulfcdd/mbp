@@ -1,0 +1,237 @@
+{% extends 'front/theme_2/base.html.twig' %}
+
+{% block title %}
+    {{ newsCategory }}
+{% endblock %}
+
+{% block body %}
+
+    <section id="main">
+        <section class="tail-fragment tail-fragment_white decorated-bottom top-page-section">
+            <div class="center-wrapper">
+
+                <div class="section-headline">{{ newsCategory }}</div>
+
+                {% if news | length != 0 %}
+
+                    <div class="fints-line fints-line_of-3">
+
+                        {% set someCountValue = 1 %}
+
+                        {% for item in news | slice(0, 3) %}
+
+                            <a href="{{ path('front.short_news', {
+                                'id': item.id
+                            }) }}" class="fint fint_vertical fint_bordered {% if someCountValue == 1 %}hide-on-560{% endif %}">
+                                <div class="fint__image fint__image_vertical">
+                                    <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                </div>
+                                <div class="fint__content fint__content_vertical">
+                                    <div class="fint__title fint__title_vertical">{{ item.title }}</div>
+                                    <div class="fint__post-time fint__post-time_vertical">
+                                        <i class="fa fa-calendar-o"></i>
+                                        <span class="s_date">{{ item.createdAt | date("d") }} {{ item.createdAt | date('F', 'Europe/Moscow')}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                            {% set someCountValue = 0 %}
+                        {% endfor %}
+                    </div>
+                    <div class="fints-line fints-line_of-4">
+                        {% set someCountValue = 1 %}
+                        {% for item in news | slice(3, 4) %}
+                            <a href="{{ path('front.short_news', {
+                                'id': item.id
+                            }) }}" class="fint fint_vertical fint_bordered {% if someCountValue == 1 %}hide-on-1000{% elseif someCountValue == 2 %}hide-on-560{% endif %}">
+                                <div class="fint__image fint__image_vertical">
+                                    <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                </div>
+                                <div class="fint__content fint__content_vertical">
+                                    <div class="fint__title fint__title_vertical">{{ item.title }}</div>
+                                    <div class="fint__post-time fint__post-time_vertical">
+                                        <i class="fa fa-calendar-o"></i>
+                                        <span class="s_date">{{ item.createdAt | date("d") }} {{ item.createdAt | date('F', 'Europe/Moscow')}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                            {% set someCountValue = someCountValue + 1 %}
+                        {% endfor %}
+                    </div>
+
+                {% endif %}
+            </div>
+        </section>
+
+        {% if news | length != 0 %}
+
+            <section class="tail-fragment tail-fragment_white">
+                <div class="center-wrapper">
+                    <div class="fints fints_billet">
+                        {% set someCountValue = 1 %}
+                        {% for item in news | slice(7, 2) %}
+                            <a href="#" class="fint fint_billet fint_bordered {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                <div class="fint__image fint__image_billet">
+                                    <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                </div>
+                                <div class="fint__content fint__content_billet">
+                                    <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                </div>
+                            </a>
+                            {% set someCountValue = 0 %}
+                        {% endfor %}
+                    </div>
+                    <div class="fints fints_billet">
+                        {% set someCountValue = 1 %}
+                        {% for item in news | slice(9, 2) %}
+                            <a href="#" class="fint fint_billet fint_bordered {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                <div class="fint__image fint__image_billet">
+                                    <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                </div>
+                                <div class="fint__content fint__content_billet">
+                                    <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                </div>
+                            </a>
+                            {% set someCountValue = 0 %}
+                        {% endfor %}
+                    </div>
+                    <div class="fints fints_billet">
+                        {% set someCountValue = 1 %}
+                        {% for item in news | slice(11, 2) %}
+                            <a href="#" class="fint fint_billet fint_bordered {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                <div class="fint__image fint__image_billet">
+                                    <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                </div>
+                                <div class="fint__content fint__content_billet">
+                                    <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                </div>
+                            </a>
+                            {% set someCountValue = 0 %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            {% set someCountVal = 13 %}
+            {% set someLengthOfArray = (news | length) - someCountVal%}
+            {% set someCountBlocks = (news | length) %}
+            {% set blocks = someLengthOfArray // someCountVal %}
+            {% if someLengthOfArray % someCountVal != 0 %}
+                {% set blocks = blocks + 1 %}
+            {% endif %}
+
+            {% if blocks != 0 %}
+                {% for i in range(1, blocks) %}
+
+                    <section class="tail-fragment">
+                        <div class="center-wrapper">
+                            {% if i == 1 %}
+                                <div class="section-headline">Читайте также</div>
+                            {% endif %}
+                            <div class="fints-line fints-line_of-3">
+                                {% set someCountValue = 1 %}
+                                {% for item in news | slice(someCountVal, 3) %}
+                                    <a href="{{ path('front.short_news', {
+                                        'id': item.id
+                                    }) }}" class="fint fint_vertical {% if someCountValue == 1 %}hide-on-560{% endif %}">
+                                        <div class="fint__image fint__image_vertical">
+                                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                        </div>
+                                        <div class="fint__content fint__content_vertical">
+                                            <div class="fint__title fint__title_vertical">{{ item.title }}></div>
+                                            <div class="fint__post-time fint__post-time_vertical">
+                                                <i class="fa fa-calendar-o"></i>
+                                                <span class="s_date">{{ item.createdAt | date("d") }} {{ item.createdAt | date('F', 'Europe/Moscow')}}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {% set someCountValue = 0 %}
+                                {% endfor %}
+                                {% set someCountVal = someCountVal + 3 %}
+                            </div>
+
+                            <div class="fints fints_billet">
+                                {% set someCountValue = 1 %}
+                                {% for item in news | slice(someCountVal, 2) %}
+                                    <a href="{{ path('front.short_news', {
+                                        'id': item.id
+                                    }) }}" class="fint fint_billet {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                        <div class="fint__image fint__image_billet">
+                                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                        </div>
+                                        <div class="fint__content fint__content_billet">
+                                            <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                        </div>
+                                    </a>
+                                    {% set someCountValue = 0 %}
+                                {% endfor %}
+                                {% set someCountVal = someCountVal + 2 %}
+                            </div>
+                            <div class="fints fints_billet">
+                                {% set someCountValue = 1 %}
+                                {% for item in news | slice(someCountVal, 2) %}
+                                    <a href="{{ path('front.short_news', {
+                                        'id': item.id
+                                    }) }}" class="fint fint_billet">
+                                        <div class="fint__image fint__image_billet {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                        </div>
+                                        <div class="fint__content fint__content_billet">
+                                            <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                        </div>
+                                    </a>
+                                    {% set someCountValue = 0 %}
+                                {% endfor %}
+                                {% set someCountVal = someCountVal + 2 %}
+
+                            </div>
+                            <div class="fints fints_billet">
+                                {% set someCountValue = 1 %}
+                                {% for item in news | slice(someCountVal, 2) %}
+                                    <a href="{{ path('front.short_news', {
+                                        'id': item.id
+                                    }) }}" class="fint fint_billet {% if someCountValue == 1 %}hide-on-1000{% endif %}">
+                                        <div class="fint__image fint__image_billet">
+                                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                        </div>
+                                        <div class="fint__content fint__content_billet">
+                                            <div class="fint__title fint__title_billet">{{ item.title }}</div>
+                                        </div>
+                                    </a>
+                                    {% set someCountValue = 0 %}
+                                {% endfor %}
+                                {% set someCountVal = someCountVal + 2 %}
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="tail-fragment tail-fragment_white decorated-bottom">
+                        <div class="center-wrapper">
+                            <div class="fints-line fints-line_of-4">
+                                {% set someCountValue = 1 %}
+                                {% for item in news | slice(someCountVal, 4) %}
+                                    <a href="#" class="fint fint_vertical fint_bordered {% if someCountValue == 1 %}hide-on-1000{% elseif someCountValue == 2 %}hide-on-560{% endif %}">
+                                        <div class="fint__image fint__image_vertical">
+                                            <img src="{{ generate_preview_link(item.fileName, 'news',  width_news_block, height_news_block ) }}">
+                                        </div>
+                                        <div class="fint__content fint__content_vertical">
+                                            <div class="fint__title fint__title_vertical">{{ item.title }}</div>
+                                            <div class="fint__post-time fint__post-time_vertical">
+                                                <i class="fa fa-calendar-o"></i>
+                                                <span class="s_date">{{ item.createdAt | date("d") }} {{ item.createdAt | date('F', 'Europe/Moscow')}}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    {% set someCountValue = someCountValue + 1 %}
+                                {% endfor %}
+                                {% set someCountVal = someCountVal + 4 %}
+                            </div>
+                        </div>
+                    </section>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+
+    </section>
+{% endblock %}

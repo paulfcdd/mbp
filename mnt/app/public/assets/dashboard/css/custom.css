@@ -1,0 +1,115 @@
+.checked-row{
+  background-color: pink !important;
+}
+
+.own_statistic{
+    color: darkgreen;
+}
+.sorting_desc{
+    background: #808285;
+    color: #ffffff;
+}
+
+.sorting_asc{
+    background: #808285;
+    color: #ffffff;
+}
+
+.sorting_disabled{
+    background: #808285;
+    color: #ffffff;
+}
+
+.sorting{
+    background: #808285;
+    color: #ffffff;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 4px 0 4px 10px!important;
+}
+
+.jcrop-image-stage img {
+    position: static;
+}
+
+.img-container {
+    margin-bottom: 1rem;
+}
+
+table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before {
+    display: none!important;
+}
+
+table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    display: none!important;
+}
+
+.modal-dialog {
+    max-width: 90% !important;
+}
+
+.news-sources-links-list__item {
+    margin-bottom: 6px;
+}
+.news-sources-links-list__item-link {
+    word-wrap: break-word;
+}
+
+.odd{
+    font-size: 14px;
+}
+.even{
+    font-size: 14px;
+}
+
+.btn{
+    padding: .300rem .50rem!important;
+    font-size: 14px!important;
+}
+
+.vertical-text-class{
+    -webkit-writing-mode: vertical-rl;
+    writing-mode:tb-rl;
+    transform: rotate(-180deg);
+    width: 20px;
+}
+
+.text-class{
+    min-width: 240px;
+}
+.table.dataTable thead .sorting_asc{
+    background-size: 1.5em;
+}
+
+.table.dataTable thead .sorting_desc{
+    background-size: 1.5em;
+}
+
+.collection-type-fieldset {
+    border: 1px solid #c1c1c1;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.add-collection-button {
+    float: right;
+}
+
+.th-hidden{
+    display: none;
+}
+
+.custom-control-label {
+    font-weight: 300 !important;
+}
+
+.settings-of-fields-title-block{
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-of-fields-angle{
+    margin: auto 15px auto 0;
+    font-size: 1.6rem;
+}
